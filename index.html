@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="bg-dark">
+<head>
+	<title>Just a Form</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/animate.css">
+	<link rel="stylesheet" type="text/css" href="CSS/fancy.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body >
+<div id="cont">
+<div id="titleContainer" class="container-fluid border-bottom border-dark bg-dark shadow">
+	<h1 class="text-center text-white">Just A Form</h1>
+</div><br>
+
+<div id="cardContainerUgly" class="container  pt-3 pb-3" >
+	<div class="row justify-content-center ">
+	<div class="card col-10 border-0 pr-0">
+	  <div class="card-body d-flex justify-content-end border-right border-dark">
+	    <h5 class="card-title">Don't like the style of the form?</h5>
+	    <p class="card-text ml-2">Try changing the style. </p>
+	    <div class="d-flex align-items-center">
+	    <button id="changeBtn" class="btn btn-primary ml-2">Change</button>
+	  	</div>
+	  </div>
+	</div>
+	</div>
+</div>
+
+<div id="cardContainerFancy" class="container  pt-3 pb-3  text-white" hidden>
+	<div class="row justify-content-center ">
+	<div class="card col-10 border-0 pl-0 bg-transparent">
+	  <div class="card-body d-flex justify-content-start border-left border-white">
+	    <h5 class="card-title">The other style is better?</h5>
+	    <p class="card-text ml-2">Try changing again. </p>
+	    <div class="d-flex align-items-center">
+	    <button id="resetChangeBtn" class="btn btn-primary ml-2 fancyBtn">Change</button>
+	  	</div>
+	  </div>
+	</div>
+	</div>
+</div>
+
+<div id="formContainer" class="container collapse show">
+	<div class="row justify-content-center">
+		<div id="instructionText" class="col-10 pl-0 font-weight-light">Fields marked with <span class="text-danger">*</span> are obligatory.</div>
+	</div>
+<div class="row justify-content-center">
+	<div id="formSection" class="col-10 shadow p-3 mb-5 bg-white rounded">
+	<form autocomplete="off" novalidate>
+		<div class="form-row">
+			<div class="form-group col-md-6 custom-control">
+				<label for="inputUsername">Username<span class="text-danger">*</span></label>
+				<input type="text" id="inputUsername" class="form-control" placeholder="username" required>
+				<small id="HelpUsername" class="collapse form-text text-muted" >Your username must be at least 4 characters long, can contain letters or numbers, and must not contain spaces, special characters, or emoji.</small>
+				<div class="invalid-feedback">Please provide a valid username.</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputEmail">Email<span class="text-danger">*</span></label>
+				<input type="email" id="inputEmail" class="form-control" placeholder="email" required>
+				<div class="invalid-feedback">Please provide a valid Email.</div>
+			</div>					
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputPass">Password<span class="text-danger">*</span></label>
+				<input type="password" id="inputPass" class="form-control" placeholder="password" required>
+				<small id="HelpPass" class="collapse form-text text-muted" >Your password must be at least <span id="passLength">8 characters long</span>, contain at least <span id="passCapital">a capital letter</span> and <span id="passNum">a number</span>, and <span id="passChars">must not contain spaces, special characters, or emoji</span>.</small>
+				<div class="invalid-feedback">Please provide a valid password.</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputConfirmPass">Confirm password<span class="text-danger">*</span></label>
+				<input type="password" id="inputConfirmPass" class="form-control" placeholder="password" required>
+				<div class="invalid-feedback">Please confirm the password. <span id="invalidConfPass"></span></div>
+			</div>					
+		</div>
+		<hr>
+		<div class="form-row">
+			<div class="form-group col-md-8">
+				<label for="inputName">Name</label>
+				<input type="text" id="inputName" class="form-control" placeholder="name">
+				<div class="invalid-feedback">Invalid name.</div>
+			</div>
+			<div class="form-group col-md-4 col-sm-6">
+				<label for="inputBDay">Birth day</label>
+				<input type="date" id="inputBDay" class="form-control" min="1910-01-01" max="2025-01-01">
+				<div class="invalid-feedback">Must be at least 6 yers old to use this form</div>
+			</div>					
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputPhone">Phone number</label><br>
+				<input type="text" id="inputPhone" class="form-control" placeholder="Phone number" maxlength="10" minlength="7">
+				<small id="HelpPhone" class="collapse form-text text-muted" >7 numbers for local phone, 10 numbers for celphones</small>
+				<div class="invalid-feedback">Invalid phone number.</div>
+			</div>		
+			<div class="form-group col-md-6">
+				<label >Sex: </label>
+				<div class="pt-1 pl-4 mt-0">
+				<div class="custom-control custom-radio custom-control-inline ">
+				  	<input type="radio" id="radFemale" name="SexOptions" class="custom-control-input">
+				  	<label class="custom-control-label" for="radFemale">Female</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline ">
+				  	<input type="radio" id="radMale" name="SexOptions" class="custom-control-input">
+				  	<label class="custom-control-label" for="radMale">Male</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline ">
+				  	<input type="radio" id="radOther" name="SexOptions" class="custom-control-input">
+				  	<label class="custom-control-label" for="radOther">Other</label>
+				</div>
+				</div>
+			</div>		
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-12">
+				<label for="inputAddress">Address</label><br>
+				<textarea rows="2"  id="inputAddress" class="form-control" placeholder="Address"></textarea>
+			</div>			
+		</div>
+		<div class="form-row" >	
+			<div class="col-md-3 col-sm-6">
+				<label>I like to drink:</label>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" name="drinks" class="custom-control-input" id="cbWine" value="wine">
+					<label class="custom-control-label" for="cbWine">Wine</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" name="drinks" class="custom-control-input" id="cbBeer" value="beer">
+					<label class="custom-control-label" for="cbBeer">Beer</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" name="drinks" class="custom-control-input" id="cbSoda" value="soda">
+					<label class="custom-control-label" for="cbSoda">Soda</label>
+				</div>
+			</div>	
+			<div class="col-md-2 col-sm-6  mt-sm-3 pt-sm-3">	
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" name="drinks" class="custom-control-input" id="cbCoffe" value="coffe">
+					<label class="custom-control-label" for="cbCoffe">Coffe</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" name="drinks" class="custom-control-input" id="cbTea" value="tea">
+					<label class="custom-control-label" for="cbTea">Tea</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" name="drinks" class="custom-control-input" id="cbWater" value="water">
+					<label class="custom-control-label" for="cbWater">Water</label>
+				</div>
+			</div>	
+			<div class="form-group col-md-6">
+				<label>My favorite animal is:</label>
+				<select id="selectAnimal" class="custom-select">
+					<option value="animals" selected>Select an option...</option>
+					<option value="cats">Cat</option>
+					<option value="dogs">Dog</option>
+					<option value="cats and dogs">Both</option>
+					<option value="other animals that are not cats nor dogs">None of the above</option>
+				</select>
+			</div>		
+		</div>
+		<div class="d-flex justify-content-end">
+			<button id="subBtn" type="button" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+	</div>
+</div>
+</div>
+
+<div id="outputContainer" class="container collapse">
+	<hr>
+	<div class="d-flex flex-row">
+	<div id="output" class="col-10">
+		<h3><p>Your name is <span id="sName" class="font-weight-bold"></span> and you want to use <span id="sUsername" class="font-weight-bold"></span> as your username. You are <span id="sSex" class="font-weight-bold"></span> that was born in <span id="sBDay" class="font-weight-bold"></span>. If anyone wants to contact you they can send you an email at <span id="sMail" class="font-weight-bold"></span> or call you at the number <span id="sPhone" class="font-weight-bold"></span>, even better they can visit you at <span id="sAddress" class="font-weight-bold"></span>. They need to know that you <span id="sDrink" class="font-weight-bold"></span> and you like <span id="sAnimal" class="font-weight-bold"></span>.</p></h3>
+	</div>
+	<div class=" col-xs-2 d-flex align-items-start">
+		<button id="editBtn" type="button" class="btn btn-primary">Edit</button>
+	</div>
+	</div>
+</div>
+
+<div id="footerContainer" class="container-fluid border-top border-dark p-1 bg-dark">
+	<div class="row">
+		<div class="col"><small class="text-muted text-white  d-flex justify-content-start">Powered by Bootstrap and JS</small></div>
+		<div class="col"><p class="font-weight-bold text-muted d-flex d-flex justify-content-end">Javier Mijangos &copy 2018</p></div>
+	</div>
+</div>
+<div class="container mt-5 p-3 "></div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="JS/controller.js"></script>
+<script type="text/javascript" src="JS/textGenerator.js"></script>
+<script type="text/javascript" src="JS/change.js"></script>
+
+</html>
