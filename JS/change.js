@@ -132,5 +132,7 @@ const ToStandardStyle=()=>{
 	// location.reload();
 }
 
+ChangeBg(false);
+
 changeBtn.addEventListener("click", ToFancyStyle);
 restBtn.addEventListener("click", ToStandardStyle)
